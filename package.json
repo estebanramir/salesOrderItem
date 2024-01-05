@@ -1,0 +1,22 @@
+{
+  "name": "sales-order-items",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "install:all": " npm run install:server -f && npm run install:web -f",
+    "dev:web": "cd web && npm start",
+    "dev:server": "cd server && npm start",
+    "dev": "concurrently \"npm:dev:web\" \"npm:dev:server\" -c \"bgGreen.bold,bgYellow.bold\"",
+    "install:server": "cd server && npm i",
+    "install:web": "cd web && npm i",
+    "start:web": "",
+    "start:server": "",
+    "start": "concurrently",
+    "postinstall": "run-p install:*"
+  },
+  "dependencies": {
+    "axios": "^1.1.2",
+    "concurrently": "^7.4.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
